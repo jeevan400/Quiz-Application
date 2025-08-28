@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="/Task6/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="question">
+        <div class="icon">
+          <a href="/Task6/index.html"><i class="fa-solid fa-arrow-left"></i></a>
+        </div>
+        <div class="heading">
+          <h3>Great Job on Finishing the Quiz</h3>
+          <p>Keep learning, keep winning!</p>
+        </div>
+      </div>
+      <div class="form-img">
+        <img src="/Task6/image/cong.png" alt="no image">
+        <span class="marks"></span>
+        <p>Well Done! You got <b class="sub-marks"></b></p>
+    </div>
+    <div class="buttons">
+            <a href="/Task6/index.html" class="back">Back</a>
+        </div>
+        <script>
+            // URL se score aur total get karo
+            const urlParams = new URLSearchParams(window.location.search);
+            const score = urlParams.get("score");
+            const total = urlParams.get("total");
+
+            // .marks span me show karo
+            document.querySelector(".marks").innerText = `${score}/${total}`;
+            document.querySelector(".sub-marks").innerText = `${score}/${total}`;
+        </script>
+    <script src="htmlQuiz.js"></script>
+  </body>
+</html>
